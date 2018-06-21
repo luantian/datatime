@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dateTime.css">
+    <title>Document</title>
+</head>
+<body>
+	<input id="aaaa" type="text" readonly>
+    <div id="timeWrap">
+        <!-- <div gmTime="gm_time">
+            <div gmTime="gm_title">
+                <div gmTime="gm_prevBtn">&lt;</div>
+                <div gmTime="gm_titleCon">2011年1月1日</div>
+                <div gmTime="gm_nextBtn">&gt;</div>
+            </div>
+            <div gmTime="gm_week" class="clearfix">
+                <div gmTime="gm_weekItem">日</div>
+                <div gmTime="gm_weekItem">一</div>
+                <div gmTime="gm_weekItem">二</div>
+                <div gmTime="gm_weekItem">三</div>
+                <div gmTime="gm_weekItem">四</div>
+                <div gmTime="gm_weekItem">五</div>
+                <div gmTime="gm_weekItem">六</div>
+            </div>
+            <div gmTime="gm_day" class="clearfix" onselectstart="return false;" >
+                <div gmTime="gm_dayItem">1</div>
+                <div gmTime="gm_dayItem">2</div>
+                <div gmTime="gm_dayItem">3</div>
+                <div gmTime="gm_dayItem">4</div>
+                <div gmTime="gm_dayItem">5</div>
+                <div gmTime="gm_dayItem">6</div>
+                <div gmTime="gm_dayItem">7</div>
+                <div gmTime="gm_dayItem">8</div>
+                <div gmTime="gm_dayItem">9</div>
+                <div gmTime="gm_dayItem">10</div>
+                <div gmTime="gm_dayItem">11</div>
+                <div gmTime="gm_dayItem">12</div>
+                <div gmTime="gm_dayItem">13</div>
+                <div gmTime="gm_dayItem">14</div>
+                <div gmTime="gm_dayItem">15</div>
+                <div gmTime="gm_dayItem">16</div>
+                <div gmTime="gm_dayItem" class="active">17</div>
+                <div gmTime="gm_dayItem">18</div>
+                <div gmTime="gm_dayItem">19</div>
+                <div gmTime="gm_dayItem">20</div>
+                <div gmTime="gm_dayItem">21</div>
+                <div gmTime="gm_dayItem">22</div>
+                <div gmTime="gm_dayItem">23</div>
+                <div gmTime="gm_dayItem">24</div>
+                <div gmTime="gm_dayItem">25</div>
+                <div gmTime="gm_dayItem" class="today">26</div>
+                <div gmTime="gm_dayItem">27</div>
+                <div gmTime="gm_dayItem">28</div>
+                <div gmTime="gm_dayItem">29</div>
+                <div gmTime="gm_dayItem">30</div>
+            </div>
+            <div gmTime="gm_timepicker" class="scrollY" onselectstart="return false;">
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+                <p>00:00</p>
+            </div>
+        </div> -->
+    </div>
+    <script src="dateTime.js"></script>
+    <script>
+
+        var a = $_$DateTime({
+            container: document.getElementById('timeWrap'),
+            input: document.getElementById('aaaa'),
+            // output: false,
+            isShowHour: true,
+            callback: function(data) {
+                console.log(data);
+            }
+        });
+    </script>
+</body>
+</html>

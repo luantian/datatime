@@ -2,7 +2,7 @@
  * @Author: Terence 
  * @Date: 2018-03-26 15:23:27 
  * @Last Modified by: Terence
- * @Last Modified time: 2018-06-13 12:23:30
+ * @Last Modified time: 2018-07-10 11:21:28
  */
 
  /**
@@ -129,8 +129,14 @@
 		for (var i = 0; i < 24; i++) {
 			d += '<p gmTime="gm_hour">'+ (i < 10 ? '0' + i : i) +':00</p>';
 		}
+
+		var s = '';
+		for (var i = 0; i < 12; i++) {
+			s += '<p gmTime="gm_second">'+ ('00:' + ((i * 5) > 5 ? i * 5 : '0' + i * 5)) +'</p>';
+		}
 	
 		var hours = this.isShowHour ? '<div gmTime="gm_timepicker" class="scrollY" onselectstart="return false";>'+ d +'</div>' : '';
+		var seconds = this.isShowHour ? '<div gmTime="gm_timepicker" class="scrollY" onselectstart="return false";>'+ s +'</div>' : '';
 		var isShowHour = this.isShowHour ? 'showHour' : '';
 		
 		var str =   '<div gmTime="gm_time" '+ isShowHour +'>' +
@@ -142,6 +148,7 @@
 						'<div gmTime="gm_week" class="clearfix">'+ a +'</div>' + 
 						'<div class="clearfix">' +
 							'<div gmTime="gm_day" class="clearfix" onselectstart="return false;" >'+ u +'</div>' + 
+							seconds +
 							hours +
 						'</div>' +
 					'</div>';
@@ -186,6 +193,8 @@
 			this.prevMonth();
 		} else if (targetProp == 'gm_hour') {
 			this.setSelectHour(target);
+		} else if (targetProp == 'gm_second') {
+			this.setSelectSecond(target);
 		}
 	}
 	
@@ -263,7 +272,25 @@
 	
 	DateTime.prototype.setSelectHour = function(target) {
 		var sHour = target.innerHTML;
+		var aGmHour = this.wrap.querySelectorAll('[gmTime="gm_hour"]');
+	
+		for (var i = 0; i < aGmHour.length; i++) {
+			aGmHour[i].className = '';
+		}
+		target.className = 'active';
 		this.selectHour = sHour + ':00';
+		console.log('this.selectHour', this.selectHour);
+		// 
+	}
+
+	DateTime.prototype.setSelectSecond = function(target) {
+		var sSecond = target.innerHTML.substring(3);
+		var aGmSecond = this.wrap.querySelectorAll('[gmTime="gm_second"]');
+		for (var i = 0; i < aGmSecond.length; i++) {
+			aGmSecond[i].className = '';
+		}
+		target.className = 'active';
+		this.selectHour = this.selectHour.replace(/:(\S*):/, ':'+ sSecond +':');
 		this.useCallback();
 	}
 	

@@ -9,7 +9,7 @@
 }
 
 [gmTime="gm_time"][showhour] {
-	width: 17rem;
+	width: 21rem;
 }
 
 [gmTime="gm_time"] {
@@ -116,4 +116,12 @@
     height: 0;
     clear: both;
     visibility: hidden;
+}
+
+[gmTime="gm_hour"].active {
+	color: #0074cd;
+}
+
+[gmTime="gm_second"].active {
+	color: #0074cd;
 }

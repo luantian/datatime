@@ -9,7 +9,7 @@
 }
 
 [gmTime="gm_time"][showhour] {
-	width: 21rem;
+	width: 19rem;
 }
 
 [gmTime="gm_time"] {
@@ -89,22 +89,31 @@
 	color: #fff;
 }
 [gmTime="gm_timepicker"] {
-	width: 4rem;
-	float: right;
+	width: 2.6rem;
+	float: left;
 	height: 10rem;
 	overflow: auto;
 	text-align: center;
 	position: relative;
-	top: -1.5rem;
+	top: -1.8rem;
 }
-[gmTime="gm_timepicker"] > p {
+
+[gmTime="gm_timepicker"]:nth-of-type(2) {
+	padding-left: .5rem;
+}
+
+[gmTime="gm_timepicker"] p {
 	margin: 0;
 	padding: 0.2rem 0;
 	font-size: .7rem;
 	cursor: pointer;
 }
-[gmTime="gm_timepicker"] > p:hover {
+[gmTime="gm_timepicker"] p:hover {
 	color: #0074cd;
+}
+
+[gmTime="d_wrap"], [gmTime="s_wrap"] {
+	height: 10rem; overflow:auto;
 }
 
 [gmTime="gm_time"] .clearfix {
@@ -125,3 +134,4 @@
 [gmTime="gm_second"].active {
 	color: #0074cd;
 }
+

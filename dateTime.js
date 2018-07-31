@@ -2,7 +2,7 @@
  * @Author: Terence 
  * @Date: 2018-03-26 15:23:27 
  * @Last Modified by: Terence
- * @Last Modified time: 2018-07-10 16:47:54
+ * @Last Modified time: 2018-07-10 18:01:29
  */
 
  /**
@@ -135,8 +135,8 @@
 			s += '<p gmTime="gm_second">'+ (((i * 5) > 5 ? i * 5 : '0' + i * 5)) +'</p>';
 		}
 	
-		var hours = this.isShowHour ? '<div gmTime="gm_timepicker" onselectstart="return false";>时<div gmTime="d_wrap">'+ d +'</div></div>' : '';
-		var seconds = this.isShowHour ? '<div gmTime="gm_timepicker" onselectstart="return false";>分<div gmTime="s_wrap">'+ s +'</div></div>' : '';
+		var hours = this.isShowHour ? '<div gmTime="gm_timepicker" onselectstart="return false";>时<div gmTime="d_wrap" class="scrollY">'+ d +'</div></div>' : '';
+		var seconds = this.isShowHour ? '<div gmTime="gm_timepicker" onselectstart="return false";>分<div gmTime="s_wrap" class="scrollY">'+ s +'</div></div>' : '';
 		var isShowHour = this.isShowHour ? 'showHour' : '';
 		
 		var str =   '<div gmTime="gm_time" '+ isShowHour +'>' +
